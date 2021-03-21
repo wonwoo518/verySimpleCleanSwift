@@ -10,7 +10,3 @@ import UIKit
 protocol UseCasePresenter {
     func output()
 }
-
-extension UILabel: UseCasePresenter {
-    func output() { text = "response!!" }
-}

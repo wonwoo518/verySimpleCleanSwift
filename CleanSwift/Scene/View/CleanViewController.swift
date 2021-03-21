@@ -16,10 +16,15 @@ class CleanViewController: UIViewController {
         setup()
     }
     func setup() {
-        self.controller = MyController(useCaseInputPort: UseCaseInteractorImp(presenter: myLabel))
+        self.controller = MyController(useCaseInputPort: UseCaseInteractorImp(presenter: self))
     }
     
     @IBAction func onBtn() {
         controller?.onRequest()
     }
+}
+
+
+extension CleanViewController: UseCasePresenter {
+    func output() { myLabel.text = "response!!" }
 }
