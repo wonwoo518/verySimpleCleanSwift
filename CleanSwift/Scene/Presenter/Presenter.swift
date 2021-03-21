@@ -7,6 +7,6 @@
 
 import UIKit
 
-protocol UseCasePresenter {
+protocol UseCaseOuputPort {
     func output()
 }

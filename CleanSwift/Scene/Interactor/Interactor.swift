@@ -12,16 +12,16 @@ protocol UseCaseInputPort {
 }
 
 protocol UseCaseInteractor: UseCaseInputPort{
-    var presenter: UseCasePresenter {get}
+    var outputPort: UseCaseOuputPort {get}
 }
 
 class UseCaseInteractorImp: UseCaseInteractor {
-    var presenter: UseCasePresenter
-    init(presenter: UseCasePresenter){ self.presenter = presenter }
+    var outputPort: UseCaseOuputPort
+    init(outputPort: UseCaseOuputPort){ self.outputPort = outputPort }
 }
 extension UseCaseInteractorImp: UseCaseInputPort {
     func input() {
         print("usecase input")
-        presenter.output()
+        outputPort.output()
     }
 }
